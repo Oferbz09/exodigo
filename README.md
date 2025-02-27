@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# Exodigo Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Project is database search for cocktails that allows you to explore various cocktail recipes and add your own unique cocktails.
 
-Currently, two official plugins are available:
+## Table of Contents
+1. [Installation](#installation)
+2. [Routes](#routes)
+3. [License](#license)
+4. [Contact](#contact)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+To install and run this project locally, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Oferbz09/exodigo.git
+    ```
 
-- Configure the top-level `parserOptions` property like this:
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+After installation, you can use the project by navigating to the project directory and running the app with:
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Routes
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Home**: `/` - Displays a list of all cocktails.
+- **Add Cocktail**: `/add` - Form to add a new cocktail to the database.
+- **Cocktail Detail**: `/cocktail/:id` - Displays detailed information about a specific cocktail based on its ID.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions, please reach out to:
+- Email: oferbz09@gmail.com
+- GitHub: [@Oferbz09](https://github.com/Oferbz09)
