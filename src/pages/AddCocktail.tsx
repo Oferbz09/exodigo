@@ -335,7 +335,7 @@ const AddCocktail: React.FC = () => {
 
 
 const FormWrapper = styled.div`
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -375,13 +375,53 @@ const FormFields = styled.div`
     flex-direction: column;
     width: 100%
 `
+const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 16px 0;
+`;
 
+const UploadFileContainer = styled.div`
+    flex: 1;
+`;
+
+const ImagePreviewContainer = styled.div`
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border-radius: 5px;
+`;
+
+const PreviewImage = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+`;
+
+const Placeholder = styled(Typography)`
+    color: #aaa;
+`;
 
 const IngredientContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 10px; 
     margin-bottom: 15px;
+
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
 
     .ingredient-text-input {
         flex: 1;
@@ -396,6 +436,11 @@ const AddIngredientButton = styled(Button)`
     width: 80px;
     height: 56px;
     margin: inherit !important;
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
 `;
 
 const IngredientList = styled.div`
@@ -434,41 +479,7 @@ const SubmitButton = styled(Button)`
     margin: 20px auto;
 `;
 
-const ImageContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    gap: 20px;
-`;
 
-const UploadFileContainer = styled.div`
-    flex: 1;
-`;
-
-const ImagePreviewContainer = styled.div`
-    width: 250px;
-    min-height: 250px;
-    height: auto;
-    margin-bottom: 20px;
-    border: 1px dashed #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f9f9f9;
-    border-radius: 5px;
-`;
-
-const PreviewImage = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-`;
-
-const Placeholder = styled(Typography)`
-    color: #aaa;
-`;
 
 const ErrorMessage = styled(Typography).attrs({ color: "error" })`
     text-align: center;

@@ -79,7 +79,7 @@ const CocktailDetail = () => {
     return (
         <>
             <BackButton />
-            <Typography variant="h2">{cocktail.strDrink}</Typography>
+            <Typography className={"cocktail-title"} variant="h2">{cocktail.strDrink}</Typography>
             <ContentWrapper>
                 <CocktailImageContainer>
                     <CocktailImage src={cocktail.strDrinkThumb || PLACEHOLDER_IMAGE} alt={cocktail.strDrink} />
@@ -110,7 +110,7 @@ const CocktailDetail = () => {
             )}
             {cocktail.strCategory && (
                 <StyledCategory>
-                    <StyledTitle>Categories</StyledTitle>
+                    <StyledTitle>Category</StyledTitle>
                     <Typography variant="h5">{cocktail.strCategory}</Typography>
                 </StyledCategory>
             )}
@@ -132,7 +132,12 @@ const ContentWrapper = styled.div`
 
     @media (max-width: 768px) {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
+    }
+    
+    .cocktail-title{
+        width: 100%;
+        line-break: anywhere;
     }
 `;
 
@@ -141,8 +146,16 @@ const CocktailImageContainer = styled.div`
     justify-content: center;
     width: 400px;
     height: 400px;
-    margin-top: 20px;
     position: relative;
+    margin: 20px auto;
+    @media (max-width: 768px) {
+        width: 320px;
+        height: 320px;
+    }
+    @media (max-width: 380px) {
+        width: 200px;
+        height: 200px;
+    }
 `;
 
 const CocktailImage = styled.img`
@@ -158,6 +171,11 @@ const Ingredients = styled.div`
     flex: 1;
     margin: 0 20px;
     color: white;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin: 0;
+    }
+    
     ul {
         list-style: none;
         padding: 0;
